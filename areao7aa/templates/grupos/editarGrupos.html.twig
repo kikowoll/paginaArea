@@ -1,0 +1,231 @@
+{% extends "dashboard.html.twig" %}
+
+{% block title %}Editar Grupos{% endblock %}
+
+{# css #}
+{% block stylesheets %}
+    <style>
+        .panel-pantalla {
+            width: 100%;
+            height: 100%;
+            background: #eee;
+        }
+    </style>
+{% endblock %}
+
+{# contenido #}
+{% block body %}
+    <div class="panel-pantalla">
+        <div class="container">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{label}} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        {% endfor %}
+        <form action="{{ path('gru_guardar')}}" method="post">
+            <input type="hidden" name="idd" id="idd">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Nombre Grupo:</label>
+                        <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Municipio:</label>
+                        <input type="text" class="form-control form-control-sm" id="zona" name="zona" value="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Direccion:</label>
+                        <input type="text" class="form-control form-control-sm" id="direcion" name="direcion" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Codigo Postal:</label>
+                        <input type="text" class="form-control form-control-sm" id="codpos" name="codpos" value="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Local:</label>
+                        <input type="text" class="form-control form-control-sm" id="local" name="local" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">ciudad:</label>
+                        <input type="text" class="form-control form-control-sm" id="ciudad" name="ciudad" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Madrid ciudad:</label>
+                        <select name="sitios" id="sitios" class="custom-select">
+                            <option value="MADRID">Esta en Madrid Ciudad</option>
+                            <option value="noesta">No esta en Madrid Ciudad</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="btn-group m-2">
+                            <a href="{{ path('gru_grupos') }}" type="link" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Volver</a>
+                            <button type="reset" class="btn btn-danger"><i class="fa fa-eraser"></i> Limpiar</button>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Guardar</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Link de las Reuniones:</label>
+                        <input type="text" class="form-control form-control-sm" id="link" name="link" value="">
+                    </div>
+                </div>
+                    
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Reuniones Cerradas:</label>
+                        <input type="text" class="form-control form-control-sm" id="cerradas" name="cerradas" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Reuniones Abiertas:</label>
+                        <input type="text" class="form-control form-control-sm" id="abiertas" name="abiertas" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Reuniones Online:</label>
+                        <input type="text" class="form-control form-control-sm" id="online" name="online" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Otros:</label>
+                        <input type="text" class="form-control form-control-sm" id="otros" name="otros" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Servidor 1:</label>
+                        <input type="text" class="form-control form-control-sm" id="ser1" name="ser1" value="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Latitud:</label>
+                        <input type="text" class="form-control form-control-sm" id="lat" name="lat" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Servidor 2:</label>
+                        <input type="text" class="form-control form-control-sm" id="ser2" name="ser2" value="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Longitud:</label>
+                        <input type="text" class="form-control form-control-sm" id="lng" name="lng" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Servidor 3:</label>
+                        <input type="text" class="form-control form-control-sm" id="ser3" name="ser3" value="">
+                    </div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Lunes</th>
+                        <th scope="col">Martes</th>
+                        <th scope="col">Miercoles</th>
+                        <th scope="col">Jueves</th>
+                        <th scope="col">viernes</th>
+                        <th scope="col">Sabado</th>
+                        <th scope="col">Domingo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="col">Mañanas</th>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="lm" name="lm" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="mm" name="mm" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="xm" name="xm" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="jm" name="jm" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="vm" name="vm" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="sm" name="sm" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="dm" name="dm" value=""></td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Tardes</th>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="lt" name="lt" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="mt" name="mt" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="xt" name="xt" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="jt" name="jt" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="vt" name="vt" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="st" name="st" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="dt" name="dt" value=""></td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Online</th>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="lo" name="lo" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="mo" name="mo" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="xo" name="xo" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="jo" name="jo" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="vo" name="vo" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="so" name="so" value=""></td>
+                        <td><input type="text" class="form-control form-control-sm" maxlength="13" id="do" name="do" value=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        </div>
+    </div>
+{% endblock %}
+
+{# javascript #}
+{% block javascripts %}
+   {% if editar == "si" %}
+   
+    <script>
+        $('#idd').val('{{ grupos.id }}')
+        $('#nombre').val('{{ grupos.nombre }}')
+        $('#direcion').val('{{ grupos.direccion }}')
+        $('#local').val('{{ grupos.local }}')
+        $('#zona').val('{{ grupos.zona }}')
+        $('#codpos').val('{{ grupos.codpos }}')
+        $('#ciudad').val('{{ grupos.ciudad }}')
+        $('#sitios').val('{{ grupos.sitios }}')
+        $('#cerradas').val('{{ grupos.cerradas }}')
+        $('#abiertas').val('{{ grupos.abiertas }}')
+        $('#online').val('{{ grupos.online }}')
+        $('#otros').val('{{ grupos.otros }}')
+        $('#lat').val('{{ grupos.lat }}')
+        $('#lng').val('{{ grupos.lng }}')
+        $('#link').val('{{ grupos.link }}')
+        $('#ser1').val('{{ grupos.servidor1 }}')
+        $('#ser2').val('{{ grupos.servidor2 }}')
+        $('#ser3').val('{{ grupos.servidor3 }}')
+        $('#lm').val('{{ grupos.lm }}')
+        $('#mm').val('{{ grupos.mm }}')
+        $('#xm').val('{{ grupos.xm }}')
+        $('#jm').val('{{ grupos.jm }}')
+        $('#vm').val('{{ grupos.vm }}')
+        $('#sm').val('{{ grupos.sm }}')
+        $('#dm').val('{{ grupos.dm }}')
+        $('#lt').val('{{ grupos.lt }}')
+        $('#mt').val('{{ grupos.mt }}')
+        $('#xt').val('{{ grupos.xt }}')
+        $('#jt').val('{{ grupos.jt }}')
+        $('#vt').val('{{ grupos.vt }}')
+        $('#st').val('{{ grupos.st }}')
+        $('#dt').val('{{ grupos.dt }}')
+        $('#lo').val('{{ grupos.lo }}')
+        $('#mo').val('{{ grupos.mo }}')
+        $('#xo').val('{{ grupos.xo }}')
+        $('#jo').val('{{ grupos.jo }}')
+        $('#vo').val('{{ grupos.vo }}')
+        $('#so').val('{{ grupos.so }}')
+        $('#do').val('{{ grupos.do }}')
+        
+    </script>
+   {% endif %}
+{% endblock %}

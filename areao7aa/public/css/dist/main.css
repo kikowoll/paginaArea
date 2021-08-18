@@ -1,0 +1,271 @@
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  background-color: #f8f9fa;
+}
+html body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  transition: all 1s;
+  z-index: 1000000;
+}
+html body header #navbar {
+  display: table;
+  height: 70px;
+  margin: auto;
+  padding: 2px;
+}
+html body header #navbar ul {
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+html body header #navbar ul li {
+  display: block;
+  float: left;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0 10px;
+}
+html body header #navbar ul li .nav-item {
+  color: #f8f9fa;
+  font-size: 20px;
+}
+html body header #navbar .logo {
+  float: left;
+  width: 250px;
+  height: 250px;
+  margin: 120px 20px 0 20px;
+  transition: all 1s;
+}
+html body #banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #162f71;
+}
+html body #banner .texto-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+html body #info .body-info {
+  height: 280px;
+  min-height: 280px;
+}
+html body #reuniones .conte-reuniones {
+  position: relative;
+  margin-top: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+html body #reuniones .conte-reuniones .conte-ciudad {
+  position: relative;
+  width: 100%;
+  padding: 1px;
+  background-color: #f8f9fa;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .cabeza {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #007bff;
+  line-height: 60px;
+  color: #f8f9fa;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios {
+  position: relative;
+  width: 100%;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .cabeza-muni {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border: 2px solid #17a2b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #17a2b8;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .cabeza-muni i {
+  transition: all 1s;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .cabeza-muni.rodar i {
+  transform: rotate(180deg);
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .conte-info-muni {
+  position: relative;
+  width: 100%;
+  display: none;
+  background-color: #6c757d;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .conte-info-muni .grupo {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 2px 2px 6px 4px #343a40;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .conte-info-muni .grupo .conte-estados {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .conte-info-muni .grupo .nombre-grupo {
+  width: 100%;
+  padding: 0 10px;
+}
+html body #reuniones .conte-reuniones .conte-ciudad .conte-info .conte-municipios .conte-info-muni .grupo .paso {
+  animation: pasado 10s linear infinite;
+}
+html body #contacto .conte-contacto {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+html body #contacto .conte-contacto .conte-contacto-texto {
+  position: relative;
+}
+html body #contacto .conte-contacto form {
+  position: relative;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 20px;
+}
+html body #contacto .conte-contacto form p {
+  text-align: center;
+  font-weight: 500;
+}
+html body #contacto .conte-contacto form .cajas {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #007bff;
+}
+html body #contacto .conte-contacto form .cajas input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding-left: 20px;
+  z-index: 100;
+}
+html body #contacto .conte-contacto form .cajas input:focus ~ label {
+  bottom: 20px;
+  font-size: 14px;
+  color: #007bff;
+  left: 20px;
+}
+html body #contacto .conte-contacto form .cajas label {
+  position: absolute;
+  bottom: -5px;
+  left: 70px;
+  font-size: 18px;
+  color: #999;
+  transition: all 1s;
+}
+html body #contacto .conte-contacto form .cajas label.anima {
+  bottom: 20px;
+  font-size: 14px;
+  color: #007bff;
+  left: 20px;
+}
+html body #contacto .conte-contacto form .cajon {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 50px;
+  border-bottom: 2px solid #007bff;
+}
+html body #contacto .conte-contacto form .cajon textarea {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  resize: none;
+  transition: all 1s;
+}
+html body #contacto .conte-contacto form .cajon textarea:focus {
+  background-color: #f8f9fa;
+  padding: 5px;
+  height: 150px;
+}
+html body #contacto .conte-contacto form .cajon textarea.anima {
+  background-color: #f8f9fa;
+  padding: 5px;
+  height: 150px;
+}
+html body #contacto .conte-contacto form .verificar {
+  position: relative;
+  cursor: pointer;
+}
+html body #contacto .conte-contacto form .verificar #btn-verificar .base {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  float: left;
+  margin-right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6c757d;
+}
+html body #contacto .conte-contacto form .verificar #btn-verificar .base .boton-base {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #007bff;
+  border: 2px solid #343a40;
+}
+html body #contacto .conte-contacto form .verificar #btn-verificar .base .fondo-uno {
+  position: relative;
+  width: 0;
+  height: 20px;
+}
+html body #contacto .conte-contacto form .verificar #btn-verificar .base .fondo-dos {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+html body footer {
+  background-color: #162f71;
+}
+
+@keyframes pasado {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: -100%;
+  }
+}

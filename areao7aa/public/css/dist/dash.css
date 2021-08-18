@@ -1,0 +1,96 @@
+body {
+  background-color: #eee;
+}
+body header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #007bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .conte-header {
+  position: relative;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .conte-header #btn-menu {
+  position: relative;
+  width: 32px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+body header .conte-header #btn-menu .uno, body header .conte-header #btn-menu .dos, body header .conte-header #btn-menu .tres {
+  width: 100%;
+  height: 5px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: all 1s;
+}
+body header .conte-header #btn-menu .dos {
+  margin: 5px 0;
+}
+body header .conte-header #btn-menu.anima .uno {
+  transform: translateY(5px) rotate(-45deg);
+  width: 15px;
+  background-color: #dc3545;
+}
+body header .conte-header #btn-menu.anima .dos {
+  background-color: #dc3545;
+}
+body header .conte-header #btn-menu.anima .tres {
+  width: 15px;
+  transform: translateY(-5px) rotate(45deg);
+  background-color: #dc3545;
+}
+body header .conte-usuario {
+  position: relative;
+  height: 100%;
+  line-height: 50px;
+  margin-right: 20px;
+}
+body header .conte-usuario p {
+  font-size: 20px;
+  font-weight: bold;
+}
+body .pantalla {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+body .pantalla .panel-control {
+  position: relative;
+  margin-left: -305px;
+  width: 70%;
+  max-width: 300px;
+  height: calc(100vh - 50px);
+  background-color: #343a40;
+  padding: 0 26px;
+  transition: all 1s;
+}
+body .pantalla .panel-control.anima {
+  margin-left: 0;
+}
+body .pantalla .panel-control .arcodeon {
+  display: none;
+}
+body .pantalla .panel-control .arcodeon a {
+  font-size: 20px;
+  color: #343a40;
+  padding: 5px 0;
+}
+body .pantalla .contenido {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/logomas1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}

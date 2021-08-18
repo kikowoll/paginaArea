@@ -1,0 +1,86 @@
+// colores y medidas
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+body {
+    background-color: #fff;
+    .contenedor {
+        position: relative;
+        width: 100%;
+        header {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logo {
+                width: 100px;
+                height: 100%;
+            }
+        }
+        .cabeza{
+            position: relative;
+            width: 100%;
+            padding: 1px 0;
+            background-color: $primary;
+        }
+        table {
+            position: relative;
+            width: 100%;
+            border-collapse: collapse;
+            tbody {
+                tr {
+                    td {
+                        border:1px solid;
+                        &:nth-child(1) {
+                            width: 15%;
+                        }
+                        &:nth-child(2) {
+                            width: 35%;
+                            border: 0;
+                        }
+                        &:nth-child(3),
+                        &:nth-child(4),
+                        &:nth-child(5),
+                        &:nth-child(6),
+                        &:nth-child(7),
+                        &:nth-child(8),
+                        &:nth-child(9),
+                        &:nth-child(10) {
+                            width: 6.25%;
+                        }
+                    }
+                  &:nth-child(1) {
+
+                  }  
+                }
+            }
+        }
+
+    }
+}

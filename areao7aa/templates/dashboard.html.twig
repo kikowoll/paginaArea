@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/dist/dash.css') }}">
+    {# font awesome #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>{% block title %}{% endblock %}</title>
+    {# jquery #}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="{{ asset('js/dataTables.js') }}"></script>
+
+    {% block stylesheets %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    <header>
+        <div class="conte-header">
+            <div id="btn-menu" class="anima">
+                <div class="uno"></div>
+                <div class="dos"></div>
+                <div class="tres"></div>
+            </div>
+            <h5 class="text-white">Panel Area 7</h5>
+        </div>
+        <div class="conte-usuario">
+            <p class="text-white">kiko</p>
+        </div>
+    </header>
+
+    <div class="pantalla">
+        <div class="panel-control anima">
+            <h2 class="text-center text-white">Menu</h2>
+            <div class="conte-panel">
+                <h5 class="text-white pb-2 dash" style="cursor:pointer"><i class="fa fa-gears"></i> Admin</h5>
+                <div class="arcodeon">
+                    <div class="card card-body">
+                        <a href="#"><i class="fa fa-users"></i> Grupos</a>
+                        <a href="#"><i class="fa fa-map-marker"></i> Direciones</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conte-panel">
+                <h5 class="text-white pb-2 dash" style="cursor:pointer"><i class="fa fa-certificate"></i> Actas</h5>
+                <div class="arcodeon">
+                    <div class="card card-body">
+                        <a href="#"><i class="fa fa-paperclip"></i> Acta Teléfono</a>
+                        <a href="#"><i class="fa fa-paperclip"></i> Acta Area</a>
+                        <a href="#"><i class="fa fa-paperclip"></i> Acta Comité</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conte-panel">
+                <h5 class="text-white pb-2 dash" style="cursor:pointer"><i class="fa fa-phone"></i> Telefono</h5>
+                <div class="arcodeon">
+                    <div class="card card-body">
+                        <a href="#"><i class="fa fa-table"></i> Tabla Fijos</a>
+                        <a href="#"><i class="fa fa-table"></i> Tabla Mes</a>
+                        <a href="#"><i class="fa fa-table"></i> Tabla Historicas</a>
+                        <a href="#"><i class="fa fa-table"></i> Tabla Servidores</a>
+                        <a href="#"><i class="fa fa-print"></i> Cuadrante</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenido">
+
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!--  then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('js/dash.js') }}"></script>
+    {% block javascripts %}
+        
+    {% endblock %}
+</body>
+
+</html>

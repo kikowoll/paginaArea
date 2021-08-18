@@ -1,0 +1,85 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Panel Grupos{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <style>
+        .panel-pantalla {
+            width: 100%;
+            height: 100%;
+            background: #eee;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+  <div class="panel-pantalla">
+     <div class="container">
+     <h1 class="text-center">GRUPOS</h1>
+    <table id="mitabla" class="display">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Municipio</th>
+                <th>Ciudad</th>
+                <th>Estado</th>
+                <th>
+                    <div class="btn-group">
+                        <a href="{{ path('gru_nuevo') }}" class="btn btn-success btn-sm" title="Nuevo Grupo"><i class="fa fa-plus"></i></a>
+                        <a href="" class="btn btn-primary btn-sm" title="Imprimir"><i class="fa fa-print"></i></a>
+                        <a href="" class="btn btn-primary btn-sm" title="Imprimir con LInk"><i class="fa fa-globe"></i></a>
+                        <a href="" class="btn btn-primary btn-sm" title="Imprimir con Telefonos"><i class="fa fa-phone"></i></a>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grupo in grupos %}
+                <tr>
+                    <td>{{ grupo.nombre }}</td>
+                    <td>{{ grupo.zona }}</td>
+                    <td>{{ grupo.ciudad }}</td>
+                    <td>
+                        {% if grupo.cerradas == 'CERRADO' %}
+                        CERRADO
+                        {% else %}
+                        ABIERTO
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="{{ path('gru_editar',{'id':grupo.id}) }}" class="btn btn-primary btn-sm" title="Editar {{ grupo.nombre }}"><i class="fa fa-pencil"></i></a>
+                            <button class="btn btn-danger btn-sm" title="Eliminar {{ grupo.nombre }}" onclick="eliminar({{ grupo.id }},'{{ grupo.nombre }}')"><i class="fa fa-trash"></i></button></div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   </div>
+  </div>
+  
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('#mitabla').DataTable({
+            "language": {
+                "url": "{{ asset('js/es_es.json') }}"
+            }
+        });
+        function eliminar(idd, grupo) {
+            var kitar = confirm('¿Quieres eliminar el grupo "' + grupo + '" definitivamente?')
+
+            if(kitar == true) {
+                location.href = 'http://localhost:8000/grupos/quitar/' + idd
+            } else {
+                alert('Anulado por el usuario...')
+            }
+        }
+        {% if dato is defined %}
+                alert('Grupo {{ dato }} eliminado con exito.')
+        {% endif %}
+        
+    </script>
+{% endblock %}

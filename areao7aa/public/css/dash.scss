@@ -1,0 +1,124 @@
+// colores y medidas
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+body {
+    background-color: #eee;
+    header {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: $primary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .conte-header {
+            position: relative;
+            margin-left: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            #btn-menu {
+                position: relative;
+                width: 32px;
+                cursor: pointer;
+                margin-right: 20px;
+                .uno,.dos,.tres {
+                    width: 100%;
+                    height: 5px;
+                    background-color: $light;
+                    border-radius: 10px;
+                    transition: all 1s;
+                }
+                .dos {
+                    margin: 5px 0;
+                }
+                &.anima .uno {
+                    transform: translateY(5px) rotate(-45deg);
+                    width: 15px;
+                    background-color: $danger;
+                }
+                &.anima .dos {
+                    background-color: $danger;
+                }
+                &.anima .tres {
+                    width: 15px;
+                    transform: translateY(-5px) rotate(45deg);
+                    background-color: $danger;
+                }
+            }
+        }
+        .conte-usuario {
+            position: relative;
+            height: 100%;
+            line-height: 50px;
+            margin-right: 20px;
+            p {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+    .pantalla {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 50px);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .panel-control {
+            position: relative;
+            margin-left: -305px;
+            width: 70%;
+            max-width: 300px;
+            height: calc(100vh - 50px);
+            background-color: $dark;
+            padding: 0 26px;
+            transition: all 1s;
+            &.anima {
+                margin-left: 0;
+            }
+            .arcodeon {
+                display: none;
+                a {
+                    font-size: 20px;
+                    color: $dark;
+                    padding: 5px 0;
+                }
+            }
+        }
+        .contenido {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../img/logomas1.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+    }
+}

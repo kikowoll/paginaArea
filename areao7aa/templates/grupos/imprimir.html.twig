@@ -1,0 +1,103 @@
+{% extends "vacio.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{# css #}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/dist/imprimir.css') }}">
+{% endblock %}
+
+{# contenido #}
+{% block body %}
+<div class="contenedor">
+    <header>
+        <div class="cajas-header">
+            <img src="{{ asset('img/logomas.png') }}" alt="" class="logo" width="100">
+        </div>
+        <div class="cajas-header">
+            <h6 class="text-center">O.C.S. área7</h6>
+            <h6 class="text-center">Gran Avenida, 25; Bloque 225</h6>
+            <h6 class="text-center">28041 - Madrid</h6>
+        </div>
+        <div class="cajas-header">
+            <h6 class="text-right"><i class="fa fa-phone"></i> 913 418 282</h6>
+            <h6 class="text-right"><i class="fa fa-envelope"></i> telefono@area07aa.org</h6>
+            <h6 class="text-right"><i class="fa fa-globe"></i> area07aa.org</h6>
+        </div>
+    </header>
+    <div class="cabeza">
+        <h5 class="text-center text-white">Grupos agosto {{'now'|date('Y')}}</h5>
+        <h5 class="text-center text-white">MADRID</h5>
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td class="bg-info text-center text-white">Paso XII</td>
+                <td class="bg-primary text-center text-white">NOMBRE GRUPO</td>
+                <td class="bg-info text-center"></td>
+                <td class="bg-info text-center">lunes</td>
+                <td class="bg-info text-center">martes</td>
+                <td class="bg-info text-center">miercoles</td>
+                <td class="bg-info text-center">jueves</td>
+                <td class="bg-info text-center">viernes</td>
+                <td class="bg-info text-center">sabados</td>
+                <td class="bg-info text-center">domingos</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div> {# fin contenedor #}
+{% endblock %}
+
+{# javascripts #}
+{% block javascripts %}
+
+{% endblock %}

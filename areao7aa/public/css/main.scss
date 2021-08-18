@@ -1,0 +1,310 @@
+// colores y medidas
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+html {
+    scroll-behavior: smooth;
+    body{
+        background-color: $light;
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: transparent;
+            transition: all 1s;
+            z-index: 1000000;
+            #navbar {
+                display: table;
+                height: 70px;
+                margin: auto;
+                padding: 2px;
+                ul {
+                    float: left;
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        display: block;
+                        float: left;
+                        margin-top: 20px;
+                        list-style: none;
+                        padding: 0 10px;
+                        .nav-item {
+                            color: $light;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .logo {
+                    float: left;
+                    width: 250px;
+                    height: 250px;
+                    margin: 120px 20px 0 20px;
+                    transition: all 1s;
+                }
+            }
+        }
+        #banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #162f71;
+            .texto-banner {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                
+            }
+        }
+        #info {
+            .body-info {
+                height: 280px;
+                min-height: 280px;
+            }
+        }
+        #reuniones {
+            .conte-reuniones {
+                position: relative;
+                margin-top: 30px;
+                border-radius: 5px;
+                overflow: hidden;
+                .conte-ciudad {
+                    position: relative;
+                    width: 100%;
+                    padding: 1px;
+                    background-color: $light;
+                    .cabeza {
+                        position: relative;
+                        width: 100%;
+                        height: 60px;
+                        background-color: $primary;
+                        line-height: 60px;
+                        color: $light;
+                        font-size: 20px;
+                        text-align: center;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                    .conte-info {
+                        position: relative;
+                        width: 100%;
+                        display: none;
+                        .conte-municipios {
+                            position: relative;
+                            width: 100%;
+                            .cabeza-muni {
+                                position: relative;
+                                width: 100%;
+                                height: 50px;
+                                padding: 0 20px;
+                                border: 2px solid $info;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: $info;
+                                i {
+                                    transition: all 1s;
+                                }
+                                &.rodar i{
+                                    transform: rotate(180deg);
+                                }
+                            }
+                            .conte-info-muni {
+                                position: relative;
+                                width: 100%;
+                                display: none;
+                                background-color: $secondary;
+                                .grupo {
+                                    border-radius: 16px;
+                                    overflow: hidden;
+                                    box-shadow: 2px 2px 6px 4px $dark;
+                                    .conte-estados {
+                                        position: relative;
+                                        width: 100%;
+                                        padding: 10px 0;
+                                        display: flex;
+                                        justify-content: space-around;
+                                        align-items: center;
+                                    }
+                                    .nombre-grupo {
+                                        width: 100%;
+                                        padding: 0 10px;
+                                    }
+                                    .paso {
+                                        animation: pasado 10s linear infinite;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #contacto {
+            .conte-contacto{
+                position: relative;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                .conte-contacto-texto {
+                    position: relative;
+                }
+                form {
+                    position: relative;
+                    padding: 20px;
+                    background-color: #eee;
+                    border-radius: 20px;
+                    p {
+                        text-align: center;
+                        font-weight: 500;
+                    }
+                    .cajas {
+                        position: relative;
+                        width: 100%;
+                        height: 50px;
+                        border-bottom: 2px solid $primary;
+                        input {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            background-color: transparent;
+                            border: none;
+                            outline: none;
+                            font-size: 18px;
+                            padding-left: 20px;
+                            z-index: 100;
+                            &:focus ~ label {
+                                bottom: 20px;
+                                font-size: 14px;
+                                color: $primary;
+                                left: 20px;
+                            }
+                        }
+                        label {
+                            position: absolute;
+                            bottom: -5px;
+                            left: 70px;
+                            font-size: 18px;
+                            color: #999;
+                            transition: all 1s;
+                            &.anima {
+                                bottom: 20px;
+                                font-size: 14px;
+                                color: $primary;
+                                left: 20px;
+                            }
+                        }
+                        
+                    }
+                    .cajon {
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        min-height: 50px;
+                        border-bottom: 2px solid $primary;
+                        textarea {
+                            position: relative;
+                            width: 100%;
+                            height: 40px;
+                            background-color: transparent;
+                            border: none;
+                            outline: none;
+                            font-size: 18px;
+                            resize: none;
+                            transition: all 1s;
+                            &:focus {
+                                background-color: $light;
+                                padding: 5px;
+                                height: 150px;
+                            }
+                            &.anima {
+                                background-color: $light;
+                                padding: 5px;
+                                height: 150px;
+                            }
+                        }
+                    }
+                    .verificar {
+                        position: relative;
+                        cursor: pointer;
+                        #btn-verificar {
+                            .base {
+                                position: relative;
+                                width: 40px;
+                                height: 20px;
+                                border-radius: 10px;
+                                float: left;
+                                margin-right: 14px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                background-color: $secondary;
+                                .boton-base {
+                                    position: relative;
+                                    width: 20px;
+                                    height: 20px;
+                                    border-radius: 50%;
+                                    background-color: $primary;
+                                    border: 2px solid $dark;
+                                }
+                                .fondo-uno {
+                                    position: relative;
+                                    width: 0;
+                                    height: 20px;
+                                }
+                                .fondo-dos {
+                                    position: relative;
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+            background-color: #162f71;
+        }
+    }
+}
+
+@keyframes pasado {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: -100%;
+    }
+}

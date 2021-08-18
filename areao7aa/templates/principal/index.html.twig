@@ -1,0 +1,247 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Area 7 de AA{% endblock %}
+
+{% block stylesheets %}
+<style>
+    
+
+    #aviso {
+        color: red;
+        animation: cambio 1s linear infinite;
+    }
+
+    @keyframes cambio {
+        0% {
+            color: #aaa;
+        }
+
+        49% {
+            color: #aaa;
+        }
+
+        50% {
+            color: red;
+        }
+
+        100% {
+            color: red;
+        }
+    }
+    .card-grupos {
+        border: 2px solid #007bff;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<section id="banner">
+    <div class="container">
+        <div class="texto-banner text-center">
+            <h1 class="text-white">AREA 7</h1>
+            <h3 class="text-white">MADRID, TOLEDO, GUADALAJARA Y CIUDAD REAL</h3>
+            <h2 class="text-white">ALCOHOLICOS ANONIMOS</h2>
+            <h2 class="text-white">¿QUIZAS PODEMOS AYUDARTE?</h2>
+        </div>
+    </div>
+</section>
+
+<div class="separdores" style="height:70px" id="se_info"></div>
+{# info #}
+<section id="info">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <div class="card">
+                    <div class="card-header bg-danger">
+                        <h5 class="text-white">AVISO POR COVID</h5>
+                    </div>
+                    <div class="card-body text-center body-info">
+                        <i class="fa fa-exclamation-triangle fa-3x" id="aviso" aria-hidden="true"></i>
+                        <h6>Directorio provisional de grupos en el estado de alarma</h6>
+                        <p>En cumplimiento de la normativa legal, con motivo del COVID-19; los grupos de Alcohólicos
+                            anónimos dejaron de sesionar presencialmente. Ahora los grupos van abriendo poco a poco,
+                            haciendo sus reuniones con aforos limitados.</p>
+                        <p>SEGUIMOS ATENDIENDOLES Y SESIONANDO ON-LINE Y PRESENCIAL.
+                            LLÁMANOS, TE DIREMOS DÓNDE Y COMO ENCONTRARNOS.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-5">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <h5 class="text-white">DONDE ESTAMOS</h5>
+                    </div>
+                    <div class="card-body text-center body-info">
+                        <h1>O.C.S. Area 7</h1>
+                        <h5>Madrid, Guadalajara, Toledo y Ciudad Real.</h5>
+                        <br>
+                        <h1>Tl: 913 418 282</h1>
+                        <br>
+                        <h3><a href="http://alcoholicos-anonimos.org" target="_black">www.alcoholicos-anonimos.org</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-4">
+                <div class="p-2"><a href="" class="btn btn-primary btn-block btn-lg"><i class="fa fa-users"></i>
+                        Reuniónes</a></div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-2"><a href="" class="btn btn-primary btn-block btn-lg"><i class="fa fa-users"></i> Spaek
+                        english</a></div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-2"><a href="" class="btn btn-primary btn-block btn-lg"><i class="fa fa-envelope"></i>
+                        Contacto</a></div>
+            </div>
+        </div>
+    </div>
+
+ </section> {# fin info #}
+
+<div class="separdores" style="height:70px" id="se_reuniones"></div>
+ {# reuniones #}
+ <section id="reuniones" class="bg-dark pt-5 pb-5">
+    <div class="container">
+        <h1 class="text-center text-white">REUNIONES</h1>
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h5 class="text-white">LEYENDA</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img src="{{ asset('img/ley_abierta.png') }}" alt="" width="80">
+                        <h5 class="text-center"> Grupo Abierto</h5>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="{{ asset('img/ley_cerrada.png') }}" alt="" width="80">
+                        <h5 class="text-center"> Grupo Cerrado</h5>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="{{ asset('img/ley_online.png') }}" alt="" width="80">
+                        <h5 class="text-center"> Reuniones Online</h5>
+                    </div>
+                </div>
+            </div> 
+        </div>{# fin de la leyenda#}
+        {# reuniones #}
+            <div class="conte-reuniones col-md-12">
+               
+                {% for ciudad in ciudades %}
+                    <div class="conte-ciudad">
+                        <div class="cabeza"><i class="fa fa-users"></i> {{ ciudad.ciudad }}</div>
+                        <div class="conte-info">
+                            {% for municipio in municipios %}
+                                {% if ciudad.ciudad == municipio.ciudad %}
+                                    <div class="conte-municipios">
+                                        <div class="cabeza-muni">{{ municipio.sitios}} <i class="fa fa-arrow-circle-up"></i></div>
+                                        <div class="conte-info-muni p-3">
+                                                <div class="row pb-3">
+                                            {% for orden in ordenar %}
+                                                {% if orden.sitios == municipio.sitios %}
+                                                        <div class="col-md-3 mt-3">
+                                                            <a href="{{ path('pri_verGrupo',{id: orden.id}) }}">
+                                                                <div class="card bg-primary grupo">
+                                                                    <input type="hidden" name="{{ orden.id }}">
+                                                                    <h6 class="text-center text-dark bg-white p-1">{{ orden.zona }}</h6>
+                                                                    <h6 class="text-white nombre-grupo">{{ orden.nombre }}</h6>
+                                                                    <div class="conte-estados">
+                                                                        {% if orden.cerradas == "CERRADO" %}
+                                                                        <img src="{{ asset('img/ley_cerrada.png') }}" alt="" width="60">
+                                                                        {% else %}
+                                                                        <img src="{{ asset('img/ley_abierta.png') }}" alt="" width="60">
+                                                                        {% endif %}
+
+                                                                        {% if orden.online != "" %}
+                                                                        <img src="{{ asset('img/ley_online.png') }}" alt="" width="60">
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                                </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+ </section> {# fin reuniones #}
+
+ {# contacto #}
+
+<div class="separdores" style="height:70px" id="se_contacto"></div>
+
+ <section id="contacto">
+    <div class="container">
+        <h1 class="text-center mb-5">CONTACTO</h1>
+        <div class="row">
+            <div class="col-md-6 conte-contacto">
+                <div class="conte-contacto-texto">
+                    <h5><i class="fa fa-home"></i> OFICINA CENTRAL DE SERVICIOS</h5>
+                    <h5><i class="fa fa-map-marker"></i> calle Gran Avenida, 25</h5>
+                    <h5><i class="fa fa-thumb-tack"></i> 28041 - Madrid</h5>
+                    <h5><i class="fa fa-envelope"></i> ocs@area07aa.org</h5>
+                    <h5><i class="fa fa-phone"></i> 913 418 282</h5>
+                </div>
+            </div>
+            <div class="col-md-6 conte-contacto">
+                <form action="" class="col-md-12">
+                    <p>Hola, si quieres mas informacion; contacta con nosotros y te responderemos lo antes posible</p>
+                    <div class="cajas">
+                        <input type="text" name="nombre" id="nombre" class="input-cantacto" autocomplete="off">
+                        <label for="nombre">Nombre o apodo</label>
+                    </div>
+                    <div class="cajas">
+                        <input type="text" name="correo" id="correo" class="input-cantacto" autocomplete="off">
+                        <label for="correo">Correo</label>
+                    </div>
+                    <div class="cajas">
+                        <input type="text" name="telefono" id="telefono" class="input-cantacto" autocomplete="off">
+                        <label for="telefono">Telefono (si quieres que te llamemos)</label>
+                    </div>
+                    <div class="cajas">
+                        <input type="text" name="asunto" id="asunto" class="input-cantacto" autocomplete="off">
+                        <label for="asunto">Asunto</label>
+                     </div>
+                   
+                    <div class="cajon">
+                        <textarea name="" id="" placeholder="Tu mensaje aqui"></textarea>
+                    </div>
+                    <div class="verificar">
+                        <h6 class="m-4" id="btn-verificar">
+                            <div class="base">
+                                <div class="fondo-uno"></div>
+                                <div class="boton-base"></div>
+                                <div class="fondo-dos"></div>
+                            </div>
+                            No soy un robot
+                        </h6>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><button type="submit" class="btn btn-primary btn-block" id="btn-submit" disabled><i class="fa fa-send"></i> Enviar</button></div>
+                        <div class="col-md-6"><button type="reset" class="btn btn-danger btn-block" onclick="borrar()"><i class="fa fa-eraser"></i> Limpiar</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ </section> {# fin contacto #}
+ 
+<div class="separdores" style="height:70px"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

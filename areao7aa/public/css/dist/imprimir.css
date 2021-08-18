@@ -1,0 +1,43 @@
+body {
+  background-color: #fff;
+}
+body .contenedor {
+  position: relative;
+  width: 100%;
+}
+body .contenedor header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .contenedor header .logo {
+  width: 100px;
+  height: 100%;
+}
+body .contenedor .cabeza {
+  position: relative;
+  width: 100%;
+  padding: 1px 0;
+  background-color: #007bff;
+}
+body .contenedor table {
+  position: relative;
+  width: 100%;
+  border-collapse: collapse;
+}
+body .contenedor table tbody tr td {
+  border: 1px solid;
+}
+body .contenedor table tbody tr td:nth-child(1) {
+  width: 15%;
+}
+body .contenedor table tbody tr td:nth-child(2) {
+  width: 35%;
+  border: 0;
+}
+body .contenedor table tbody tr td:nth-child(3), body .contenedor table tbody tr td:nth-child(4), body .contenedor table tbody tr td:nth-child(5), body .contenedor table tbody tr td:nth-child(6), body .contenedor table tbody tr td:nth-child(7), body .contenedor table tbody tr td:nth-child(8), body .contenedor table tbody tr td:nth-child(9), body .contenedor table tbody tr td:nth-child(10) {
+  width: 6.25%;
+}
